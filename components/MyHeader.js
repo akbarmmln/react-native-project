@@ -97,12 +97,13 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 	},
 	view: {
+		marginTop: 25,
 		marginHorizontal: 16,
 		alignItems: 'center',
 		flexDirection: 'row',
 	},
 	titleView: {
-        marginTop: 20,
+		marginTop: 20,
         marginStart: 20,
 		flex: 1,
 	},
