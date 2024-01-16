@@ -10,27 +10,34 @@ import Svg, {
   Circle,
   SvgXml
 } from 'react-native-svg';
-// import { doc, db, onSnapshot } from '../firebase'
-// import { Utils } from '@react-native-firebase/app';
-// import firestore from '@react-native-firebase/firestore';
-import db from '../firebase'
+import { db } from '../firebase'
+import Config from 'react-native-config';
 
 // const introImageData = Image.resolveAssetSource(AppImages.welcome);
 
 const SplashScreen = props => {
-  const data = true
+  const [dataLottie, dataLottieValue] = useState(null);
   const lottieRef = useRef(null);
-  const window = useWindowDimensions();
+  console.log('Config.FIRESTORE', process.env.EXPO_PUBLIC_FIRESTORE)
 
-  db
-    .collection(`setting`).doc('lDHBS7K7XjKGslVysiMg')
+  useEffect(() => {
+    db
+    .collection(`${process.env.EXPO_PUBLIC_FIRESTORE}`)
+    .doc("lDHBS7K7XjKGslVysiMg")
     .get()
     .then(querySnapshot => {
-      console.log('querySnapshot', querySnapshot.data().splashscreen)
+      dataLottieValue(querySnapshot.data().splashscreen)
     })
     .catch(err => {
-      console.log('error querySnapshot', err)
+      dataLottieValue('https://lottie.host/3b2153a6-fb9e-4d11-9185-643aea132441/xT1u2C0Yhf.json')
+      console.log('error get fs lottie file', err)
     })
+    // db.collection(`setting`).doc('lDHBS7K7XjKGslVysiMg').onSnapshot(documentSnapshot => {
+    //   console.log('User data: ', documentSnapshot.data());
+    //   dataLottieValue(documentSnapshot.data().splashscreen)
+    // })
+  }, [dataLottie]);
+
 
   // onSnapshot(doc(db, "setting", "oigQLaWS28U7paQunlgA"), (doc) => {
   //   console.log('ggggggg', doc.data().splashscreen)
@@ -47,7 +54,7 @@ const SplashScreen = props => {
   }, [authLoaded, props.navigation]);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.animationContainer}>
       <View>
         {/* <SvgXml xml={data} style={{
           width: 200,
@@ -58,17 +65,17 @@ const SplashScreen = props => {
           height="100%"
           uri="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/debian.svg"
         /> */}
-        {data ? <LottieView
+        {dataLottie ? <LottieView
           ref={lottieRef}
           autoPlay={true}
           loop={false}
           speed={1}
           autoSize={false}
-          // source={{uri: data}}
-          source={AppImages.wellcome2}
+          source={{uri: dataLottie}}
+          // source={AppImages.wellcome2}
           style={{
             width: 200,
-            height: 200
+            height: 200,
           }}
           onAnimationFinish={(isCanceled) => {
             if (!isCanceled) {

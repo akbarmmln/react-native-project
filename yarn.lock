@@ -1883,12 +1883,12 @@
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.10.5.tgz#cd9897680d0a2f1bce8d8c23a590e5874f4617c5"
   integrity sha512-eSkJsnhBWv5kCTSU1tSUVl9mpFu+5NXXunZc83le8GMjMlsWwQArSc7cJJ4yl+aDFY0NGLi0AjZWMn1axOrkRg==
 
-"@formatjs/ecma402-abstract@1.18.0":
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.18.0.tgz#e2120e7101020140661b58430a7ff4262705a2f2"
-  integrity sha512-PEVLoa3zBevWSCZzPIM/lvPCi8P5l4G+NXQMc/CjEiaCWgyHieUoo0nM7Bs0n/NbuQ6JpXEolivQ9pKSBHaDlA==
+"@formatjs/ecma402-abstract@1.18.1":
+  version "1.18.1"
+  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.18.1.tgz#67bb6f7d4534d8bd6748f8888bf1fcba23544300"
+  integrity sha512-wANcef+tJ9RFpw4BHWlJ7AElKeIIlm8pOqmuBasKoxQtrlp6kPuiqszUEwp8nJVGJXY98Fcmq5StFG0EKNcbAQ==
   dependencies:
-    "@formatjs/intl-localematcher" "0.5.2"
+    "@formatjs/intl-localematcher" "0.5.3"
     tslib "^2.4.0"
 
 "@formatjs/fast-memoize@2.2.0":
@@ -1898,27 +1898,27 @@
   dependencies:
     tslib "^2.4.0"
 
-"@formatjs/icu-messageformat-parser@2.7.3":
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-2.7.3.tgz#c8c95e7c9f8141bdb93bea0e92e4fcace19d3c9f"
-  integrity sha512-X/jy10V9S/vW+qlplqhMUxR8wErQ0mmIYSq4mrjpjDl9mbuGcCILcI1SUYkL5nlM4PJqpc0KOS0bFkkJNPxYRw==
+"@formatjs/icu-messageformat-parser@2.7.4":
+  version "2.7.4"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-2.7.4.tgz#f4bcb1ed09edd845e55857409a0d0ffceb0bf12e"
+  integrity sha512-PfwhCW2rJ5Veu3PuvG3zvoxdDNHSX+jhIuv4IH20tQ9q3sBDGujIaWpitkx7wks7itoKft3fquTznoi3ypKzeQ==
   dependencies:
-    "@formatjs/ecma402-abstract" "1.18.0"
-    "@formatjs/icu-skeleton-parser" "1.7.0"
+    "@formatjs/ecma402-abstract" "1.18.1"
+    "@formatjs/icu-skeleton-parser" "1.7.1"
     tslib "^2.4.0"
 
-"@formatjs/icu-skeleton-parser@1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@formatjs/icu-skeleton-parser/-/icu-skeleton-parser-1.7.0.tgz#796938d6d0ba8fc75bb9edee038d1350bfee32cb"
-  integrity sha512-Cfdo/fgbZzpN/jlN/ptQVe0lRHora+8ezrEeg2RfrNjyp+YStwBy7cqDY8k5/z2LzXg6O0AdzAV91XS0zIWv+A==
+"@formatjs/icu-skeleton-parser@1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-skeleton-parser/-/icu-skeleton-parser-1.7.1.tgz#3d7d16112f9bf8b7b8ef0c61981545e0aa92bb30"
+  integrity sha512-/aD3FmWU6Q+8VhdbTKfTrGQRiQ3X0kOUC7wMtvtDmy7/bMn/SWVF02NPJVXbfjyLjXXfFD93jnWRBWTclZ32TA==
   dependencies:
-    "@formatjs/ecma402-abstract" "1.18.0"
+    "@formatjs/ecma402-abstract" "1.18.1"
     tslib "^2.4.0"
 
-"@formatjs/intl-localematcher@0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-localematcher/-/intl-localematcher-0.5.2.tgz#5fcf029fd218905575e5080fa33facdcb623d532"
-  integrity sha512-txaaE2fiBMagLrR4jYhxzFO6wEdEG4TPMqrzBAcbr4HFUYzH/YC+lg6OIzKCHm8WgDdyQevxbAAV1OgcXctuGw==
+"@formatjs/intl-localematcher@0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-localematcher/-/intl-localematcher-0.5.3.tgz#187215034c6b7da755f9573195aa793e44a620c1"
+  integrity sha512-1/X4YCuocNFcnD8t0J6ksiUk1gvI+UIGWicX6HdPvS9GnAoFsTT0pqNBh0jZ1tJY+oSqY/t9aKIGR9FbXD4yjw==
   dependencies:
     tslib "^2.4.0"
 
@@ -1950,12 +1950,12 @@
     protobufjs "^7.2.4"
     yargs "^17.7.2"
 
-"@hapi/hoek@^9.0.0":
+"@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.3.0.tgz#8368869dcb735be2e7f5cb7647de78e167a251fb"
   integrity sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==
 
-"@hapi/topo@^5.0.0":
+"@hapi/topo@^5.1.0":
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/@hapi/topo/-/topo-5.1.0.tgz#dc448e332c6c6e37a4dc02fd84ba8d44b9afb012"
   integrity sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==
@@ -3223,7 +3223,7 @@
     component-type "^1.2.1"
     join-component "^1.1.0"
 
-"@sideway/address@^4.1.3":
+"@sideway/address@^4.1.4":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.4.tgz#03dccebc6ea47fdc226f7d3d1ad512955d4783f0"
   integrity sha512-7vwq+rOHVWjyXxVlR76Agnvhy8I9rpzjosTESvmhNeXOXdZZB15Fl+TI9x1SiHZH5Jv2wTGduSxFDIaq0m3DUw==
@@ -3388,9 +3388,9 @@
     "@types/istanbul-lib-report" "*"
 
 "@types/node@*", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
-  version "20.11.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.2.tgz#39cea3fe02fbbc2f80ed283e94e1d24f2d3856fb"
-  integrity sha512-cZShBaVa+UO1LjWWBPmWRR4+/eY/JR/UIEcDlVsw3okjWEu+rB7/mH6X3B/L+qJVHDLjk9QW/y2upp9wp1yDXA==
+  version "20.11.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.3.tgz#ac29fba7aeadc74046b02e50758156f4850f1296"
+  integrity sha512-nrlmbvGPNGaj84IJZXMPhQuCMEVTT/hXZMJJG/aIqVL9fKxqk814sGGtJA4GI6hpJSLQjpi6cn0Qx9eOf9SDVg==
   dependencies:
     undici-types "~5.26.4"
 
@@ -3980,9 +3980,9 @@ camelcase@^6.2.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001565:
-  version "1.0.30001576"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001576.tgz#893be772cf8ee6056d6c1e2d07df365b9ec0a5c4"
-  integrity sha512-ff5BdakGe2P3SQsMsiqmt1Lc8221NR1VzHj5jXN5vBny9A6fpze94HiVV/n7XRosOlsShJcvMv5mdnpjOGCEgg==
+  version "1.0.30001577"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001577.tgz#a24991eb4ad67324ba8b96716340d53151f2f6f8"
+  integrity sha512-rs2ZygrG1PNXMfmncM0B5H1hndY5ZCC9b5TkFaVNfZ+AUlyqcMyVIQtc3fsezi0NUCk5XZfDf9WS6WxMxnfdrg==
 
 chalk@^2.0.1, chalk@^2.4.2:
   version "2.4.2"
@@ -4601,9 +4601,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.601:
-  version "1.4.630"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.630.tgz#1d9f4169653784997bec98975e11a2c05214ce39"
-  integrity sha512-osHqhtjojpCsACVnuD11xO5g9xaCyw7Qqn/C2KParkMv42i8jrJJgx3g7mkHfpxwhy9MnOJr8+pKOdZ7qzgizg==
+  version "1.4.632"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.632.tgz#df6253483b802eb83eee2fdc0e5067bd46f36f11"
+  integrity sha512-JGmudTwg7yxMYvR/gWbalqqQiyu7WTFv2Xu3vw4cJHXPFxNgAk0oy8UHaer8nLF4lZJa+rNoj6GsrKIVJTV6Tw==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -4773,39 +4773,6 @@ expo-constants@~14.4.2:
     "@expo/config" "~8.1.0"
     uuid "^3.3.2"
 
-expo-dev-client@~2.4.12:
-  version "2.4.12"
-  resolved "https://registry.yarnpkg.com/expo-dev-client/-/expo-dev-client-2.4.12.tgz#3ab2d03dfe22527c5f78324e4f658843a19e4d5d"
-  integrity sha512-3+xg0yb/0g6+JQaWq5+xn2uHoOXP4oSX33aWkaZPSNJLoyzfRaHNDF5MLcrMBbEHCw5T5qZRU291K+uQeMMC0g==
-  dependencies:
-    expo-dev-launcher "2.4.14"
-    expo-dev-menu "3.2.2"
-    expo-dev-menu-interface "1.3.0"
-    expo-manifests "~0.7.0"
-    expo-updates-interface "~0.10.0"
-
-expo-dev-launcher@2.4.14:
-  version "2.4.14"
-  resolved "https://registry.yarnpkg.com/expo-dev-launcher/-/expo-dev-launcher-2.4.14.tgz#ca0cabbefd6c1989709613ead9e86d2f159fe011"
-  integrity sha512-SlUf+fEX9sKzDzY1Ui8j5775eLKpO0xPVoI89G7CRsrpUv6ZRvRF836cMFesxkU5d+3bXHpKzDQiEPDSI1G/WQ==
-  dependencies:
-    expo-dev-menu "3.2.2"
-    resolve-from "^5.0.0"
-    semver "^7.5.3"
-
-expo-dev-menu-interface@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/expo-dev-menu-interface/-/expo-dev-menu-interface-1.3.0.tgz#51b6be8c6e0ce73e414ac7a545998dfad0dfdb80"
-  integrity sha512-WtRP7trQ2lizJJTTFXUSGGn1deIeHaYej0sUynvu/uC69VrSP4EeSnYOxbmEO29kuT/MsQBMGu0P/AkMQOqCOg==
-
-expo-dev-menu@3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/expo-dev-menu/-/expo-dev-menu-3.2.2.tgz#e5285846158286e7da20fa44be1b0e2079fa8cc4"
-  integrity sha512-q0IDlCGkZMsDIFV+Mgnz0Q3u/bcnrF8IFMglJ0onF09e5csLk5Ts7hKoQyervOJeThyI402r9OQsFNaru2tgtg==
-  dependencies:
-    expo-dev-menu-interface "1.3.0"
-    semver "^7.5.3"
-
 expo-file-system@~15.4.0, expo-file-system@~15.4.5:
   version "15.4.5"
   resolved "https://registry.yarnpkg.com/expo-file-system/-/expo-file-system-15.4.5.tgz#3ef68583027ff0e2fb9eca7a22b3caff6cfc550d"
@@ -4820,22 +4787,10 @@ expo-font@~11.4.0:
   dependencies:
     fontfaceobserver "^2.1.0"
 
-expo-json-utils@~0.7.0:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/expo-json-utils/-/expo-json-utils-0.7.1.tgz#efe315c982113204be46419cbc26d4d9a2af145f"
-  integrity sha512-L0lyH8diXQtV0q5BLbFlcoxTqPF5im79xDHPhybB0j36xYdm65hjwRJ4yMrPIN5lR18hj48FUZeONiDHRyEvIg==
-
 expo-keep-awake@~12.3.0:
   version "12.3.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-12.3.0.tgz#c42449ae19c993274ddc43aafa618792b6aec408"
   integrity sha512-ujiJg1p9EdCOYS05jh5PtUrfiZnK0yyLy+UewzqrjUqIT8eAGMQbkfOn3C3fHE7AKd5AefSMzJnS3lYZcZYHDw==
-
-expo-manifests@~0.7.0:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/expo-manifests/-/expo-manifests-0.7.2.tgz#77c2d9476e8130fc9ca6d4274fa1a5495d34358e"
-  integrity sha512-xlhL0XI2zw3foJ0q2Ra4ieBhU0V2yz+Rv6GpVEaaIHFlIC/Dbx+mKrX5dgenZEMERr/MG7sRJaRbAVB2PaAYhA==
-  dependencies:
-    expo-json-utils "~0.7.0"
 
 expo-modules-autolinking@1.5.1:
   version "1.5.1"
@@ -4861,11 +4816,6 @@ expo-status-bar@~1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.6.0.tgz#e79ffdb9a84d2e0ec9a0dc7392d9ab364fefa9cf"
   integrity sha512-e//Oi2WPdomMlMDD3skE4+1ZarKCJ/suvcB4Jo/nO427niKug5oppcPNYO+csR6y3ZglGuypS+3pp/hJ+Xp6fQ==
-
-expo-updates-interface@~0.10.0:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/expo-updates-interface/-/expo-updates-interface-0.10.1.tgz#cab075641cd381718ccd9264bf133dc393430a44"
-  integrity sha512-I6JMR7EgjXwckrydDmrkBEX/iw750dcqpzQVsjznYWfi0HTEOxajLHB90fBFqQkUV5i5s4Fd3hYQ1Cn0oMzUbA==
 
 expo@~49.0.15:
   version "49.0.21"
@@ -5549,13 +5499,13 @@ internal-ip@4.3.0:
     ipaddr.js "^1.9.0"
 
 intl-messageformat@^10.1.0:
-  version "10.5.8"
-  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-10.5.8.tgz#7184da425f360a53a5483a6194e16d666b011fc0"
-  integrity sha512-NRf0jpBWV0vd671G5b06wNofAN8tp7WWDogMZyaU8GUAsmbouyvgwmFJI7zLjfAMpm3zK+vSwRP3jzaoIcMbaA==
+  version "10.5.9"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-10.5.9.tgz#04a965dda8cea90ec402ac1a1c2654ce4a3b8da4"
+  integrity sha512-BcVChJS48/jGhVMGkdRAeEhYBWVuas/ANEMoWCIWsTot9gYKHfQooLI0l9LM8FdMZojPrpWg6HecB2VmXrnTYw==
   dependencies:
-    "@formatjs/ecma402-abstract" "1.18.0"
+    "@formatjs/ecma402-abstract" "1.18.1"
     "@formatjs/fast-memoize" "2.2.0"
-    "@formatjs/icu-messageformat-parser" "2.7.3"
+    "@formatjs/icu-messageformat-parser" "2.7.4"
     tslib "^2.4.0"
 
 invariant@*, invariant@^2.2.2, invariant@^2.2.4:
@@ -5840,13 +5790,13 @@ jimp-compact@0.16.1:
   integrity sha512-dZ6Ra7u1G8c4Letq/B5EzAxj4tLFHL+cGtdpR+PVm4yzPDj+lCk+AbivWt1eOM+ikzkowtyV7qSqX6qr3t71Ww==
 
 joi@^17.2.1:
-  version "17.11.0"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-17.11.0.tgz#aa9da753578ec7720e6f0ca2c7046996ed04fc1a"
-  integrity sha512-NgB+lZLNoqISVy1rZocE9PZI36bL/77ie924Ri43yEvi9GUUMPeyVIr8KdFTMUlby1p0PBYMk9spIxEUQYqrJQ==
+  version "17.11.1"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-17.11.1.tgz#f42951137d25c27f61807502b0af71f7abb885ba"
+  integrity sha512-671acnrx+w96PCcQOzvm0VYQVwNL2PVgZmDRaFuSsx8sIUmGzYElPw5lU8F3Cr0jOuPs1oM56p7W2a1cdDOwcw==
   dependencies:
-    "@hapi/hoek" "^9.0.0"
-    "@hapi/topo" "^5.0.0"
-    "@sideway/address" "^4.1.3"
+    "@hapi/hoek" "^9.3.0"
+    "@hapi/topo" "^5.1.0"
+    "@sideway/address" "^4.1.4"
     "@sideway/formula" "^3.0.1"
     "@sideway/pinpoint" "^2.0.0"
 
@@ -7432,6 +7382,11 @@ react-native-animatable@^1.4.0:
   integrity sha512-DZwaDVWm2NBvBxf7I0wXKXLKb/TxDnkV53sWhCvei1pRyTX3MVFpkvdYBknNBqPrxYuAIlPxEp7gJOidIauUkw==
   dependencies:
     prop-types "^15.8.1"
+
+react-native-config@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-1.5.1.tgz#73c94f511493e9b7ff9350cdf351d203a1b05acc"
+  integrity sha512-g1xNgt1tV95FCX+iWz6YJonxXkQX0GdD3fB8xQtR1GUBEqweB9zMROW77gi2TygmYmUkBI7LU4pES+zcTyK4HA==
 
 react-native-gesture-handler@^2.14.0:
   version "2.14.1"

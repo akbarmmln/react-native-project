@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig)
 const db = firebase.firestore();
-export default db;
+export { app, db };
 
 // import * as firebase from 'firebase/app';
 // import { getFirestore, collection, doc, getDocs, onSnapshot } from 'firebase/firestore';
