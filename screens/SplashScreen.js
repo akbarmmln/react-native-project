@@ -10,7 +10,10 @@ import Svg, {
   Circle,
   SvgXml
 } from 'react-native-svg';
-import { doc, db, onSnapshot } from '../firebase'
+// import { doc, db, onSnapshot } from '../firebase'
+// import { Utils } from '@react-native-firebase/app';
+// import firestore from '@react-native-firebase/firestore';
+import db from '../firebase'
 
 // const introImageData = Image.resolveAssetSource(AppImages.welcome);
 
@@ -18,6 +21,16 @@ const SplashScreen = props => {
   const data = true
   const lottieRef = useRef(null);
   const window = useWindowDimensions();
+
+  db
+    .collection(`setting`).doc('lDHBS7K7XjKGslVysiMg')
+    .get()
+    .then(querySnapshot => {
+      console.log('querySnapshot', querySnapshot.data().splashscreen)
+    })
+    .catch(err => {
+      console.log('error querySnapshot', err)
+    })
 
   // onSnapshot(doc(db, "setting", "oigQLaWS28U7paQunlgA"), (doc) => {
   //   console.log('ggggggg', doc.data().splashscreen)

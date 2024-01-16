@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "114224144045",
+    "firebase_url": "https://projectname-63209.firebaseio.com",
+    "project_id": "projectname-63209",
+    "storage_bucket": "projectname-63209.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114224144045:android:145e7a04b94ce263a37024",
+        "android_client_info": {
+          "package_name": "com.appsnipp.education"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114224144045-4b9chkkthrv0gmcj28m8stptud1suj15.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appsnipp.education",
+            "certificate_hash": "33f7fcf2851df0563ac8dd96dafd98fd891a8993"
+          }
+        },
+        {
+          "client_id": "114224144045-srinoit05dci7ogtm73hgoiprn1lg4mt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_84PZYnugrZdG4ry4Fy-yNSOu-BAigFs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114224144045-srinoit05dci7ogtm73hgoiprn1lg4mt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,43 +1,54 @@
-import React, { Component } from 'react'
-import { View, Text, Image, ScrollView, Linking, StyleSheet, Dimensions } from 'react-native'
+import React, { Component, useState, useEffect } from 'react'
+import { Button, View, Text, Image, ScrollView, Linking, StyleSheet, Dimensions } from 'react-native'
 import axios from 'axios'
 import { Card, Title, Paragraph } from 'react-native-paper'
 import { AppImages } from '../assets-project';
 import moment from 'moment';
 
-export default class LikeScreen extends Component {
-  state = {
-    articles: [],
-    isLoading: true,
-    errors: null
-  };
+const { width, height } = Dimensions.get("window");
 
-  getArticles() {
-    axios
-      .get(
-        "https://newsapi.org/v2/top-headlines?country=id&apiKey=0d9767b7a15a497ab9c988d408e34136"
-      )
-      .then((response) => {
-        this.setState({
-          articles: response.data.articles,
-          isLoading: false
-        });
-      })
-      .catch((error) => {
-        this.setState({ error, isLoading: false })
-      })
+const LikeScreen = props => {
+  const [articles, articleValue] = useState([]);
+  const [isLoading, isLoadingValue] = useState(true);
+  const [errors, errorsValue] = useState(null);
+
+  useEffect(() => {
+    getArticles();
+  },[]);
+
+  const getArticles = async function(){
+    try{
+      const response = await axios({
+        url: 'https://newsapi.org/v2/top-headlines?country=id&apiKey=0d9767b7a15a497ab9c988d408e34136',
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        }
+      });
+      articleValue(response.data.articles)
+      isLoadingValue(false)
+      errorsValue(null)
+    }catch(e){
+      console.log('error getArticles', e)
+      articleValue([])
+      isLoadingValue(false)
+      errorsValue(e.toString())
+    }
+  }
+  
+  const renderLoading = () => {
+    return (
+      <View style={styles.root}>
+        <Text>Loading...</Text>
+      </View>
+    )
   }
 
-  componentDidMount() {
-    this.getArticles();
-  }
-
-  render() {
-    const { isLoading, articles } = this.state;
+  const renderArticles = () => {
     return (
       <View>
         <ScrollView>
-          {!isLoading ? (
+          {
             articles.map(article => {
               const { publishedAt, title, url, description, urlToImage } = article;
               return (
@@ -61,22 +72,24 @@ export default class LikeScreen extends Component {
                 </Card>
               );
             })
-          ) : (
-            <View style={styles.root}>
-              <Text>Loading...</Text>
-            </View>
-          )}
+          }
         </ScrollView>
       </View>
     )
   }
+  
+  return (
+    !isLoading ? renderArticles() : renderLoading()
+  )
 }
 
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    height: Dimensions.get('window').height,
+    height: height,
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
+
+export default LikeScreen;
