@@ -11,14 +11,12 @@ import Svg, {
   SvgXml
 } from 'react-native-svg';
 import { db } from '../firebase'
-import Config from 'react-native-config';
 
 // const introImageData = Image.resolveAssetSource(AppImages.welcome);
 
 const SplashScreen = props => {
   const [dataLottie, dataLottieValue] = useState(null);
   const lottieRef = useRef(null);
-  console.log('Config.FIRESTORE', process.env.EXPO_PUBLIC_FIRESTORE)
 
   useEffect(() => {
     db
@@ -30,19 +28,8 @@ const SplashScreen = props => {
     })
     .catch(err => {
       dataLottieValue('https://lottie.host/3b2153a6-fb9e-4d11-9185-643aea132441/xT1u2C0Yhf.json')
-      console.log('error get fs lottie file', err)
     })
-    // db.collection(`setting`).doc('lDHBS7K7XjKGslVysiMg').onSnapshot(documentSnapshot => {
-    //   console.log('User data: ', documentSnapshot.data());
-    //   dataLottieValue(documentSnapshot.data().splashscreen)
-    // })
   }, [dataLottie]);
-
-
-  // onSnapshot(doc(db, "setting", "oigQLaWS28U7paQunlgA"), (doc) => {
-  //   console.log('ggggggg', doc.data().splashscreen)
-  //   setData(doc.data().splashscreen)
-  // });
 
   const [authLoaded, setAuthLoaded] = useState(false);
 
@@ -103,6 +90,7 @@ const SplashScreen = props => {
 
 const styles = StyleSheet.create({
   animationContainer: {
+    backgroundColor: '#d1eaeb',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,

@@ -48,7 +48,7 @@ const AppHeader = ({
     }
 
     setBgColor(Colors.white);
-  }, [])
+  }, [bgColor])
 
   const renderTitle = () => {
     if (historyState.key.includes('Home')) {

@@ -14,10 +14,10 @@ const LikeScreen = props => {
 
   useEffect(() => {
     getArticles();
-  },[]);
+  }, []);
 
-  const getArticles = async function(){
-    try{
+  const getArticles = async function () {
+    try {
       const response = await axios({
         url: 'https://newsapi.org/v2/top-headlines?country=id&apiKey=0d9767b7a15a497ab9c988d408e34136',
         method: "GET",
@@ -28,14 +28,14 @@ const LikeScreen = props => {
       articleValue(response.data.articles)
       isLoadingValue(false)
       errorsValue(null)
-    }catch(e){
+    } catch (e) {
       console.log('error getArticles', e)
       articleValue([])
       isLoadingValue(false)
       errorsValue(e.toString())
     }
   }
-  
+
   const renderLoading = () => {
     return (
       <View style={styles.root}>
@@ -48,36 +48,39 @@ const LikeScreen = props => {
     return (
       <View>
         <ScrollView>
-          {
-            articles.map(article => {
-              const { publishedAt, title, url, description, urlToImage } = article;
-              return (
-                <Card key={url} style={{ margin: 10, backgroundColor: 'white', borderRadius: 15 }}
-                  onPress={() => { Linking.openURL(`${url}`) }}
-                >
-                  <View style={{ flexDirection: 'row', }}>
-                    {/*  Text */}
-                    <View style={{ justifyContent: 'space-around', flex: 2 / 3, margin: 10 }}>
-                      <Title>{title}</Title>
+          <View>
+            {
+              articles.map(article => {
+                const { publishedAt, title, url, description, urlToImage } = article;
+                return (
+                  <Card key={url} style={{ margin: 10, backgroundColor: 'white', borderRadius: 15 }}
+                    onPress={() => { Linking.openURL(`${url}`) }}
+                  >
+                    <View style={{ flexDirection: 'row', }}>
+                      {/*  Text */}
+                      <View style={{ justifyContent: 'space-around', flex: 2 / 3, margin: 10 }}>
+                        <Title>{title}</Title>
+                      </View>
+                      {/*  Image */}
+                      <View style={{ flex: 1 / 3, margin: 10 }}>
+                        <Image style={{ width: 120, height: 120 }} source={{ uri: urlToImage }} />
+                      </View>
                     </View>
-                    {/*  Image */}
-                    <View style={{ flex: 1 / 3, margin: 10 }}>
-                      <Image style={{ width: 120, height: 120 }} source={{ uri: urlToImage }} />
+                    <View style={{ margin: 10 }}>
+                      <Paragraph>{description}</Paragraph>
+                      <Text>{moment(publishedAt).format('DD-MM-YYYY HH:mm:ss')}</Text>
                     </View>
-                  </View>
-                  <View style={{ margin: 10 }}>
-                    <Paragraph>{description}</Paragraph>
-                    <Text>{moment(publishedAt).format('DD-MM-YYYY HH:mm:ss')}</Text>
-                  </View>
-                </Card>
-              );
-            })
-          }
+                  </Card>
+                );
+              })
+            }
+          </View>
+          <View style={{marginTop:110}}></View>
         </ScrollView>
       </View>
     )
   }
-  
+
   return (
     !isLoading ? renderArticles() : renderLoading()
   )
