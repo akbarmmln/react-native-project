@@ -8,6 +8,9 @@ const AppImages = {
     garlic: require('./assets/garlic.png'),
     star: require('./assets/star.png'),
     orange: require('./assets/orange.png'),
+    empyState: require('./wellcome/empty-state.jpg'),
+    stars: require('./wellcome/star.png'),
+    shares: require('./wellcome/share.png'),
 };
 
 export { AppImages };

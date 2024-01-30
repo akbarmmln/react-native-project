@@ -1,11 +1,9 @@
 import React, { Component, useState, useEffect } from 'react'
-import { Button, View, Text, Image, ScrollView, Linking, StyleSheet, Dimensions } from 'react-native'
+import { Button, View, Text, Image, ScrollView, Linking, StyleSheet, Dimensions, StatusBar } from 'react-native'
 import axios from 'axios'
 import { Card, Title, Paragraph } from 'react-native-paper'
 import { AppImages } from '../assets-project';
 import moment from 'moment';
-
-const { width, height } = Dimensions.get("window");
 
 const LikeScreen = props => {
   const [articles, articleValue] = useState([]);
@@ -47,7 +45,7 @@ const LikeScreen = props => {
   const renderArticles = () => {
     return (
       <View>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View>
             {
               articles.map(article => {
@@ -75,7 +73,6 @@ const LikeScreen = props => {
               })
             }
           </View>
-          <View style={{marginTop:110}}></View>
         </ScrollView>
       </View>
     )
@@ -89,7 +86,6 @@ const LikeScreen = props => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    height: height,
     alignItems: 'center',
     justifyContent: 'center',
   },

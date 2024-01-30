@@ -5,6 +5,7 @@ import Icon, { Icons } from '../components/Icons';
 import Colors from '../constants/Colors';
 import ColorScreen from '../pages2/ColorScreen';
 import * as Animatable from 'react-native-animatable';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const TabArr = [
   { route: 'Home', label: 'Home', type: Icons.Ionicons, icon: 'home', component: ColorScreen },
@@ -69,23 +70,75 @@ const TabButton = (props) => {
 const MainNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={{
+      screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarStyle: styles.tabBar,
-      }}
-    >
+        tabBarActiveTintColor: '#731ad9',
+        tabBarInactiveTintColor: '#249bc9',
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+          if (route.name === 'Home') {
+            iconName = focused
+              ? 'home'
+              : 'home-outline';
+          } else if (route.name === 'Search'){
+            iconName = focused
+              ? 'search'
+              : 'search-outline';
+          } else if (route.name === 'Add'){
+            iconName = focused
+              ? 'add-circle'
+              : 'add-circle-outline';
+          } else if (route.name === 'Like'){
+            iconName = focused
+              ? 'newspaper'
+              : 'newspaper-outline';
+          } else if (route.name === 'Account'){
+            iconName = focused
+              ? 'person'
+              : 'person-outline';
+          }
+          return (
+            <Ionicons
+            name={iconName}
+            size={size}
+            color={color}
+          />
+
+            // <MaterialCommunityIcons
+            //   name={iconName}
+            //   size={size}
+            //   color={color}
+            // />
+          );
+        }
+      })}>
+
       {TabArr.map((item, index) => {
         return (
-          <Tab.Screen key={index} name={item.route} component={item.component}
-            options={{
-              tabBarShowLabel: false,
-              tabBarButton: (props) => <TabButton {...props} item={item} />
-            }}
-          />
+          <Tab.Screen key={index} name={item.route} component={item.component}/>
         )
       })}
     </Tab.Navigator>
   );
+  // return (
+  //   <Tab.Navigator
+  //     screenOptions={{
+  //       headerShown: false,
+  //       tabBarStyle: styles.tabBar,
+  //     }}
+  //   >
+  //     {TabArr.map((item, index) => {
+  //       return (
+  //         <Tab.Screen key={index} name={item.route} component={item.component}
+  //           options={{
+  //             tabBarShowLabel: false,
+  //             tabBarButton: (props) => <TabButton {...props} item={item} />
+  //           }}
+  //         />
+  //       )
+  //     })}
+  //   </Tab.Navigator>
+  // );
 };
 export default MainNavigator;
 
@@ -98,12 +151,10 @@ const styles = StyleSheet.create({
   tabBar: {
     height: 70,
     position: 'absolute',
-    // bottom: 16,
-    // right: 16,
-    // left: 16,
-    // borderRadius: 16,
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16
+    bottom: 16,
+    right: 16,
+    left: 16,
+    borderRadius: 16,
   },
   btn: {
     width: 50,

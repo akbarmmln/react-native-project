@@ -1,32 +1,24 @@
 import React from 'react';
 import {
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   TextInput,
   View,
   Image,
   TouchableOpacity,
-  Dimensions
 } from 'react-native';
 import HeaderComp from '../components/Header';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import { AppImages } from '../assets-project';
-
-const screenHeight = Dimensions.get('screen').height;
-const windowHeight = Dimensions.get('window').height;
-const navbarHeight = screenHeight - windowHeight + StatusBar.currentHeight;
-const heightFill = windowHeight - (70 + navbarHeight)
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
-    <View
-      style={{
-        height: heightFill
-      }}>
-      <ScrollView horizontal={false} showsHorizontalScrollIndicator={false}>
+    <View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View>
           <HeaderComp />
           <View
@@ -50,6 +42,7 @@ const HomeScreen = () => {
               />
             </View>
           </View>
+
           <View style={styles.categories}>
             <View
               style={{
@@ -64,9 +57,15 @@ const HomeScreen = () => {
               <Text style={{ color: '#16162E', fontSize: 18, fontWeight: 'bold' }}>
                 Categories
               </Text>
-              <Text style={{ color: '#F33A63', fontSize: 14, fontWeight: 'bold' }}>
-                See all
-              </Text>
+
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate('page2Screen')
+                }>
+                <Text style={{ color: '#F33A63', fontSize: 14, fontWeight: 'bold' }}>
+                  See all
+                </Text>
+              </TouchableOpacity>
             </View>
 
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -174,82 +173,84 @@ const HomeScreen = () => {
               <Text style={{ color: '#16162E', fontSize: 18, fontWeight: 'bold' }}>
                 Popular product
               </Text>
-              <Text style={{ color: '#F33A63', fontSize: 14, fontWeight: 'bold' }}>
-                See all
-              </Text>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate('page1Screen')
+                }>
+                <Text style={{ color: '#F33A63', fontSize: 14, fontWeight: 'bold' }}>
+                  See all
+                </Text>
+              </TouchableOpacity>
             </View>
             <View
               style={{
                 display: 'flex',
                 justifyContent: 'space-around',
                 flexDirection: 'row',
-                // marginBottom: 10,
-                // height: 360
+                marginBottom: 10,
               }}>
               <View style={styles.productCard}>
-                <TouchableOpacity>
-                  <View
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      flexDirection: 'row',
-                    }}>
-                    <Image
-                      style={{ marginTop: 30 }}
-                      source={AppImages.orange}
-                    />
-                    <IonIcons
-                      style={styles.heartIcon}
-                      name="heart-outline"
-                      size={25}
-                    />
-                  </View>
+                <View
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    flexDirection: 'row',
+                  }}>
+                  <Image
+                    style={{ marginTop: 30 }}
+                    source={AppImages.orange}
+                  />
+                  <IonIcons
+                    style={styles.heartIcon}
+                    name="heart-outline"
+                    size={25}
+                  />
+                </View>
+                <View
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    flexDirection: 'row',
+                  }}>
+                  <Text style={{ fontSize: 16, paddingLeft: 8 }}>Malta</Text>
                   <View
                     style={{
                       display: 'flex',
                       justifyContent: 'space-between',
                       flexDirection: 'row',
+                      alignItems: 'center',
+                      paddingRight: 8,
                     }}>
-                    <Text style={{ fontSize: 16, paddingLeft: 8 }}>Malta</Text>
-                    <View
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        paddingRight: 8,
-                      }}>
-                      <Image source={AppImages.star} />
-                      <Text style={{ color: '#16162E', fontSize: 10 }}>4.5</Text>
-                    </View>
+                    <Image source={AppImages.star} />
+                    <Text style={{ color: '#16162E', fontSize: 10 }}>4.5</Text>
                   </View>
-                  <Text style={{ fontSize: 14, paddingLeft: 8, color: '#d3d3d3' }}>
-                    4 Pic
+                </View>
+                <Text style={{ fontSize: 14, paddingLeft: 8, color: '#d3d3d3' }}>
+                  4 Pic
+                </Text>
+                <View
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    flexDirection: 'row',
+                    marginTop: 10,
+                  }}>
+                  <Text style={{ fontSize: 18, paddingLeft: 8, fontWeight: 'bold' }}>
+                    $12.50
                   </Text>
                   <View
                     style={{
+                      backgroundColor: '#40AA54',
                       display: 'flex',
-                      justifyContent: 'space-between',
-                      flexDirection: 'row',
-                      marginTop: 10,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginRight: 10,
+                      padding: 5,
+                      borderRadius: 5,
                     }}>
-                    <Text style={{ fontSize: 18, paddingLeft: 8, fontWeight: 'bold' }}>
-                      $12.50
-                    </Text>
-                    <View
-                      style={{
-                        backgroundColor: '#40AA54',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        marginRight: 10,
-                        padding: 5,
-                        borderRadius: 5,
-                      }}>
-                      <AntIcon name="shoppingcart" color="white" size={25} />
-                    </View>
+                    <TouchableOpacity><AntIcon name="shoppingcart" color="white" size={25} /></TouchableOpacity>
                   </View>
-                </TouchableOpacity>
+                </View>
               </View>
               <View style={styles.productCard}>
                 <TouchableOpacity>
@@ -430,7 +431,7 @@ const styles = StyleSheet.create({
   productCard: {
     height: 230,
     width: 166,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#84c738',
     marginTop: 10,
     borderRadius: 10,
   },
